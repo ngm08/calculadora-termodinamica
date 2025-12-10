@@ -2,12 +2,24 @@ import streamlit as st
 import math
 
 # --- CONFIGURAÇÃO DA PÁGINA ---
-# Mudei para "wide" para facilitar o alinhamento lado a lado, 
-# mas funciona em "centered" também se preferir.
 st.set_page_config(page_title="Calculadora Termodinâmica", layout="wide") 
 
-st.title("⚗️ Calculadora Termodinâmica")
-st.markdown("Cálculo de propriedades termodinâmicas com base na equação de estado de **Peng-Robinson**.")
+# --- CABEÇALHO COM LOGO ---
+col_logo, col_titulo = st.columns([1, 4]) # Cria colunas para alinhar logo e título
+
+with col_logo:
+    # Mostra a imagem. O parâmetro width ajusta o tamanho (em pixels)
+    # Certifique-se que image2.png está na mesma pasta que este script!
+    try:
+        st.image("logo.png", width=150)
+    except:
+        st.warning("Logo não encontrada (logo.png)")
+
+with col_titulo:
+    st.title("⚗️ Calculadora Termodinâmica")
+    st.markdown("Cálculo de propriedades termodinâmicas com base na equação de estado de **Peng-Robinson**.")
+
+st.markdown("---")
 
 # --- DADOS E CONSTANTES ---
 R = 8.314e-5 #bar.m³/K.mol
