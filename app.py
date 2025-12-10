@@ -310,8 +310,8 @@ with t_col1:
 
 with t_col2:
     st.subheader("Saída e Parâmetros")
-    taxa = st.number_input("Taxa de fluxo (mol/s)", value=20.0) # Movido para cá para equilibrar
-    P_out_t = st.number_input("Pressão de Saída (bar)", value=10.0)
+    taxa = st.number_input("Taxa de fluxo (mol/s)", value=20.0, step=1.0) # Movido para cá para equilibrar
+    P_out_t = st.number_input("Pressão de Saída (bar)", value=10.0, step=1.0)
     eff = st.slider("Eficiência Isentrópica", 0.0, 1.0, 0.8)
 
 if st.button("Simular Turbina", type="primary", use_container_width=True):
